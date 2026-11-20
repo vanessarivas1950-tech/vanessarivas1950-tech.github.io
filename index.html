@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nessa Florecita | Vanessa Flores</title>
+  <link rel="preconnect" href="https://googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg-cream: #fdf8f4;
+      --card-white: #fffdfb;
+      --terracotta: #c86d51;
+      --terracotta-dark: #a65239;
+      --sage: #7a8b74;
+      --blush: #f4e3dc;
+      --text-dark: #3b2f2a;
+      --text-muted: #75655e;
+      --border-soft: #ead9d0;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--bg-cream);
+      background-image:
+        radial-gradient(circle at 15% 20%, rgba(244, 227, 220, 0.7) 0%, transparent 45%),
+        radial-gradient(circle at 85% 80%, rgba(122, 139, 116, 0.14) 0%, transparent 45%);
+      font-family: "Plus Jakarta Sans", sans-serif;
+      color: var(--text-dark);
+      padding: 24px;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 460px;
+      background: var(--card-white);
+      border: 1px solid var(--border-soft);
+      border-radius: 28px;
+      padding: 44px 36px;
+      text-align: center;
+      box-shadow: 0 20px 45px rgba(59, 47, 42, 0.06);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 6px;
+      background: linear-gradient(90deg, var(--sage), var(--terracotta), #e2a48d);
+    }
+
+    .flower-badge {
+      width: 68px;
+      height: 68px;
+      margin: 0 auto 20px;
+      border-radius: 50%;
+      background: var(--blush);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--terracotta);
+    }
+
+    .flower-badge svg {
+      width: 34px;
+      height: 34px;
+    }
+
+    h1 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 2.35rem;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+      color: var(--text-dark);
+      margin-bottom: 6px;
+    }
+
+    .handle {
+      display: inline-block;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--sage);
+      text-decoration: none;
+      margin-bottom: 18px;
+      transition: color 0.2s ease;
+    }
+
+    .handle:hover {
+      color: var(--terracotta);
+    }
+
+    .bio {
+      font-size: 0.98rem;
+      line-height: 1.65;
+      color: var(--text-muted);
+      margin-bottom: 28px;
+      padding: 0 8px;
+    }
+
+    .divider {
+      height: 1px;
+      background: var(--border-soft);
+      margin: 0 auto 26px;
+      width: 80%;
+    }
+
+    .owner-box {
+      background: var(--bg-cream);
+      border: 1px solid var(--border-soft);
+      border-radius: 16px;
+      padding: 16px 20px;
+      margin-bottom: 24px;
+    }
+
+    .owner-label {
+      display: block;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+      font-weight: 600;
+    }
+
+    .owner-email {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--terracotta-dark);
+      text-decoration: none;
+      word-break: break-all;
+    }
+
+    .owner-email:hover {
+      text-decoration: underline;
+    }
+
+    .btn-group {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 20px;
+      border-radius: 999px;
+      font-size: 0.92rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: transform 0.18s ease, background-color 0.18s ease, box-shadow 0.18s ease;
+    }
+
+    .btn-primary {
+      background: var(--terracotta);
+      color: #ffffff;
+      box-shadow: 0 8px 20px rgba(200, 109, 81, 0.25);
+    }
+
+    .btn-primary:hover {
+      background: var(--terracotta-dark);
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--text-dark);
+      border: 1px solid var(--border-soft);
+    }
+
+    .btn-secondary:hover {
+      background: var(--blush);
+      border-color: var(--terracotta);
+    }
+
+    footer {
+      margin-top: 28px;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <div class="flower-badge" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 7.5a4.5 4.5 0 1 1 4.5 4.5M12 7.5A4.5 4.5 0 1 0 7.5 12M12 7.5V9m-4.5 3a4.5 4.5 0 1 0 4.5 4.5M7.5 12H9m7.5 0a4.5 4.5 0 1 1-4.5 4.5m4.5-4.5H15m-3 4.5V15" />
+        <circle cx="12" cy="12" r="2.2" />
+      </svg>
+    </div>
+
+    <h1>Nessa Florecita</h1>
+    <a class="handle" href="https://www.instagram.com/nessaflorecita/" target="_blank" rel="noopener noreferrer">@nessaflorecita</a>
+
+    <p class="bio">
+      Just a few Florecitas following Jesus and bumbling through this beautiful life.
+    </p>
+
+    <div class="divider"></div>
+
+    <div class="owner-box">
+      <span class="owner-label">Site Owner &amp; Contact</span>
+      <a class="owner-email" href="mailto:vanessarivas1950@gmail.com">vanessarivas1950@gmail.com</a>
+    </div>
+
+    <div class="btn-group">
+      <a class="btn btn-primary" href="https://www.instagram.com/nessaflorecita/" target="_blank" rel="noopener noreferrer">
+        Visit Instagram (@nessaflorecita)
+      </a>
+      <a class="btn btn-secondary" href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+        Little Florecita Creative
+      </a>
+    </div>
+
+    <footer>
+      &copy; 2026 Nessa Florecita &middot; Owned by vanessarivas1950@gmail.com
+    </footer>
+  </main>
+</body>
+</html>
